@@ -4,9 +4,7 @@ An end-to-end product analytics project diagnosing where and why an e-commerce
 platform loses customers in the purchase journey — and which product categories
 offer the greatest opportunity for improvement.
 
-**[View Interactive Dashboard on Tableau Public →]
-https://public.tableau.com/app/profile/divyanshu.pal7246/viz/Ecommerce_Conversion_Analytics_twbx/ExecutiveSummary**
-
+**[View Interactive Dashboard on Tableau Public →](https://public.tableau.com/app/profile/divyanshu.pal7246/viz/Ecommerce_Conversion_Analytics_twbx/ExecutiveSummary)**
 ---
 
 ## Business Problem
@@ -84,15 +82,15 @@ Category Opportunity.
 ## Dashboard Walkthrough
 
 ### 1. Executive Summary
-![Executive Summary](images/executive_summary.png)
+![Executive Summary](dashboard/images/executive_summary.png)
 KPIs, funnel visualization, and headline finding at a glance.
 
 ### 2. Behavioral Drivers of Conversion
-![Behavioral Insights](images/behavioural_insights.png)
+![Behavioral Insights](dashboard/images/behavioral_insights.png)
 What separates converting sessions from non-converting ones, and why.
 
 ### 3. Product Category Performance
-![Category Performance](images/product_category_performance.png)
+![Category Performance](dashboard/images/product_category_performance.png)
 Category-level opportunity ranking, benchmark methodology, and the
 business recommendation.
 
