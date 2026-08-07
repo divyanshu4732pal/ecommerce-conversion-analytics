@@ -1,2 +1,110 @@
-# ecommerce-conversion-analytics
-End-to-end e-commerce analytics project combining SQL-based feature engineering, exploratory data analysis (EDA), and Tableau dashboards to uncover customer behavior, optimize conversion funnels, and prioritize category-level growth opportunities.
+# E-commerce Conversion Funnel & Opportunity Analysis
+
+An end-to-end product analytics project diagnosing where and why an e-commerce
+platform loses customers in the purchase journey — and which product categories
+offer the greatest opportunity for improvement.
+
+**[View Interactive Dashboard on Tableau Public →]
+https://public.tableau.com/app/profile/divyanshu.pal7246/viz/Ecommerce_Conversion_Analytics_twbx/ExecutiveSummary**
+
+---
+
+## Business Problem
+
+An e-commerce platform generates significant traffic but converts only a
+fraction of it into purchases. Before recommending any fix, this project set
+out to answer three questions in order:
+
+1. **Where** in the customer journey are the biggest drop-offs?
+2. **Why** do some sessions convert and others don't?
+3. **Which** product categories should be prioritized for intervention, and
+   what's the realistic upside?
+
+## Dataset
+
+Built on real e-commerce clickstream data (~2.75M events: views, cart-adds,
+purchases) spanning 4.5 months, with a persistent visitor ID, item metadata,
+and a category hierarchy.
+
+The raw data ships as flat event logs with **no session identifier and no
+pre-built relational structure** — a deliberate choice over more common
+portfolio datasets, since it required building the analytical schema from
+scratch rather than working from a table someone else had already normalized.
+
+## Methodology
+
+**1. Data Validation** — confirmed metadata coverage (78% of items, 99.85%
+of events), category hierarchy completeness (98% of categories have a
+parent), and that the expected View→Cart→Purchase funnel actually holds for
+the majority of transactions (80.3%) before trusting the dataset further.
+
+**2. Sessionization** — no session field exists in the raw data. Sessions
+were engineered from timestamp gaps, testing 30/45/60-minute inactivity
+thresholds against real session metrics before selecting the standard
+30-minute cutoff.
+
+**3. Funnel Analysis** — quantified conversion at every stage, revealing
+that the dominant bottleneck is **View→Cart (2.5%)**, not cart abandonment
+(72.8%) — cart abandonment affects a much smaller, already-engaged pool of
+sessions than the earlier browse-to-cart drop-off.
+
+**4. Behavioral Analysis** — engineered session-level features (duration,
+unique items viewed, focus ratio, post-cart browsing) to compare converting
+vs. non-converting sessions, testing and rejecting weaker hypotheses (raw
+repeat-view counts showed no discriminating power) alongside stronger ones.
+
+**5. Category Opportunity Ranking** — built a custom prioritization metric,
+*Opportunity Carts*, benchmarked against the median performance of proven
+high-traffic categories rather than a raw average, to avoid outlier skew.
+
+**6. Dashboarding** — three linked Tableau dashboards following a
+what → why → so-what structure: Executive Summary, Behavioral Drivers, and
+Category Opportunity.
+
+## Key Findings
+
+- **71% of visitors generate only a single event** and never meaningfully
+  engage — the addressable population for behavioral optimization is a
+  minority of traffic, not the average visitor.
+- **The primary bottleneck is View→Cart, not checkout.** Only 2.5% of
+  sessions that view a product ever add it to cart — a far larger leak than
+  cart abandonment, which is high (72.8%) but affects a much smaller pool.
+- **Product exploration is the strongest behavioral predictor of purchase**:
+  purchase rate rises from 0.5% (1 product viewed) to 31.7% (16+ products).
+- **Focus Ratio shows a counterintuitive, U-shaped pattern**: sessions with
+  very narrow, single-item focus convert *worse* than sessions with broader
+  browsing — suggesting narrow fixation may signal hesitation, not
+  commitment.
+- **Category opportunity is spread across many categories rather than
+  concentrated in a few**: reaching 50% of total addressable opportunity
+  requires 37 categories, 80% requires 102 — meaning prioritization should
+  work through a ranked list rather than assume a handful of fixes will
+  capture most of the value.
+
+## Dashboard Walkthrough
+
+### 1. Executive Summary
+![Executive Summary](images/executive_summary.png)
+KPIs, funnel visualization, and headline finding at a glance.
+
+### 2. Behavioral Drivers of Conversion
+![Behavioral Insights](images/behavioural_insights.png)
+What separates converting sessions from non-converting ones, and why.
+
+### 3. Product Category Performance
+![Category Performance](images/product_category_performance.png)
+Category-level opportunity ranking, benchmark methodology, and the
+business recommendation.
+
+## Recommendation
+
+Prioritize categories by their Opportunity Carts ranking, working down the
+list according to available business resources — since opportunity is
+distributed across many categories rather than concentrated in a handful,
+no small set of fixes captures most of the value. Behavioral findings
+suggest interventions should target **product discovery and pre-cart
+hesitation** (comparison tools, richer product information, trust signals)
+rather than checkout optimization, since the data shows the browse-to-cart
+stage, not cart abandonment, is the dominant constraint.
+
+## Repository Structure
