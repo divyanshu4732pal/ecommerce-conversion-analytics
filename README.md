@@ -110,6 +110,7 @@ stage, not cart abandonment, is the dominant constraint.
 
 ## Repository Structure
 
+```
 ecommerce-conversion-analytics/
 │
 ├── README.md
@@ -123,6 +124,7 @@ ecommerce-conversion-analytics/
 │       ├── Executive Summary.png
 │       ├── Behavioral Insights.png
 │       └── Product Category Performance.png
+```
 
 ## Tools & Skills
 
