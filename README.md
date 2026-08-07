@@ -109,3 +109,54 @@ rather than checkout optimization, since the data shows the browse-to-cart
 stage, not cart abandonment, is the dominant constraint.
 
 ## Repository Structure
+
+ecommerce-conversion-analytics/
+│
+├── README.md
+├── sql/
+│ ├── 01_data_preparation/ — cleaning, sessionization, base tables
+│ ├── 02_feature_engineering/ — behavioral & category KPI tables
+│ └── 03_dashboard_tables/ — final aggregated tables feeding Tableau
+├── dashboard/
+│ ├── Ecommerce_Conversion_Analytics.twbx
+│ └── images/
+│ ├── Executive Summary.png
+│ ├── Behavioral Insights.png
+│ └── Product Category Performance.png
+
+## Tools & Skills
+
+**PostgreSQL** — schema design from raw, unstructured event logs; CTEs and
+window functions for sessionization; KPI engineering; custom benchmark and
+opportunity-scoring logic
+
+**Tableau** — multi-dashboard design following a what → why → so-what
+narrative structure; benchmark methodology made transparent on-dashboard
+rather than buried in documentation
+
+**Analytical approach** — hypothesis-driven testing, including hypotheses
+that were tested and explicitly rejected (raw repeat-view counts showed no
+discriminating power); business-first prioritization framework design;
+honest scoping of associative vs. causal claims throughout
+
+
+## Known Limitations
+
+- The underlying dataset does not include price or revenue data, so
+  opportunity is measured in **additional carts**, not revenue impact.
+  This was a deliberate trade-off: the dataset's persistent visitor ID
+  enabled genuine behavioral and longitudinal analysis that a
+  revenue-inclusive alternative dataset could not support.
+- The 30-minute session inactivity threshold, while validated against
+  this dataset's own session-length and event-density patterns (tested
+  against 45- and 60-minute alternatives), remains a judgment call rather
+  than a ground truth — no session boundary is directly observable in
+  raw clickstream data.
+- Product-level drill-down within individual categories was deliberately
+  scoped out — the category-level opportunity ranking was treated as
+  sufficient to answer the core prioritization question within the
+  project's time budget.
+
+ ## Author
+
+**Divyanshu Pal** · [Tableau Public Profile](https://public.tableau.com/app/profile/divyanshu.pal7246)
