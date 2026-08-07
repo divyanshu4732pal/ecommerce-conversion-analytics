@@ -110,19 +110,21 @@ stage, not cart abandonment, is the dominant constraint.
 
 ## Repository Structure
 
+\`\`\`
 ecommerce-conversion-analytics/
 │
 ├── README.md
 ├── sql/
-│ ├── 01_data_preparation/ — cleaning, sessionization, base tables
-│ ├── 02_feature_engineering/ — behavioral & category KPI tables
-│ └── 03_dashboard_tables/ — final aggregated tables feeding Tableau
+│   ├── 01_data_preparation/       — cleaning, sessionization, base tables
+│   ├── 02_feature_engineering/    — behavioral & category KPI tables
+│   └── 03_dashboard_tables/       — final aggregated tables feeding Tableau
 ├── dashboard/
-│ ├── Ecommerce_Conversion_Analytics.twbx
-│ └── images/
-│ ├── Executive Summary.png
-│ ├── Behavioral Insights.png
-│ └── Product Category Performance.png
+│   ├── Ecommerce_Conversion_Analytics.twbx
+│   └── images/
+│       ├── Executive Summary.png
+│       ├── Behavioral Insights.png
+│       └── Product Category Performance.png
+\`\`\`
 
 ## Tools & Skills
 
