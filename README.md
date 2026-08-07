@@ -82,15 +82,15 @@ Category Opportunity.
 ## Dashboard Walkthrough
 
 ### 1. Executive Summary
-![Executive Summary](dashboard/images/executive_summary.png)
+![Executive Summary](dashboard/images/Executive Summary.png)
 KPIs, funnel visualization, and headline finding at a glance.
 
 ### 2. Behavioral Drivers of Conversion
-![Behavioral Insights](dashboard/images/behavioral_insights.png)
+![Behavioral Insights](dashboard/images/Behavioral Insights.png)
 What separates converting sessions from non-converting ones, and why.
 
 ### 3. Product Category Performance
-![Category Performance](dashboard/images/product_category_performance.png)
+![Category Performance](dashboard/images/Product Category Performance.png)
 Category-level opportunity ranking, benchmark methodology, and the
 business recommendation.
 
